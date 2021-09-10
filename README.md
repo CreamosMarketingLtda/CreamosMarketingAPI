@@ -129,7 +129,12 @@ Antes de que puedas crear tu primera solicitud y obtener la póliza, debes consu
 ####   Response
 
 En caso de que haya colectivo vigente a la fecha actual, el servicio le retornara la información y código de respuesta que vera a continuación.
-{
+
+
+``` 
+ 
+let newSolicitud =[{
+      {
     "load": {
         "id": 876,
         "codigoInterno": "7709",
@@ -152,6 +157,8 @@ De lo contrario le mostrara esta información con el respectivo código de error
     "pageSize": null,
     "totalRecords": null
 }
+
+```
 
 ### Crear una poliza
 
