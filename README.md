@@ -121,6 +121,7 @@ Antes de que puedas crear tu primera solicitud y obtener la póliza, debes consu
 ### Obtener Colectivo Vigente
 
 | Parametro | Descripción |
+| -- | -- |
 | moduloId | Aquí iría el id del producto (seguro funerario, practiseguro, futuro protegido plus) |
 | aseguradoraId | Aquí el id de la aseguradora (Liberty Seguros, Seguros Alfa|
 | entiFactId | Aquí entidad de facturación (Gases del Caribe =”9”) |
