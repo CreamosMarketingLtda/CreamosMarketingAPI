@@ -122,7 +122,7 @@ Antes de que puedas crear tu primera solicitud y obtener la póliza, debes consu
 
 | Parametro | Descripción |
 | -- | -- |
-| moduloId | Aquí iría el id del producto (seguro funerario="10", practiseguro, futuro protegido plus="21") |
+| moduloId | Aquí iría el id del producto (seguro funerario="10", practiseguro="18", futuro protegido plus="21") |
 | aseguradoraId | Aquí el id de la aseguradora (Liberty Seguros="7", Seguros Alfa="11")|
 | entiFactId | Aquí entidad de facturación (Gases del Caribe =”9”) |
 
