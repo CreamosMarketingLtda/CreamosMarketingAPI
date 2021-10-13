@@ -143,7 +143,7 @@ El ejemplo para consumir el endpoint es:
 
 http://ilio.creamosmarketing.com:5555/v1/api-caribe/colectivo/vigente/?colectivo=0000
 
-Solicitas la información con el siguiente objeto:
+Ejemplo del cuerpo del request:
 
 ```
 {
