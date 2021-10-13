@@ -12,7 +12,7 @@ El API contiene toda la funcionalidad que necesitas para crear y consultar una p
 Una vez creada la poliza el asegurado recibira una copia en su correo y el asesor recibe la url con la poliza para descargar en PDF.
 El API de ilio se puede consumir por medio de request HTTPS realizada a la url:
 
-http://ilio.creamosmarketing.com:5555/
+http://ilio.creamosmarketing.com:5555/v1/api-caribe
 
 La documentación está escrita usando la URL de Pruebas, cuando quieras usar el servicio en Producción solo cambiala a la url correspondiente.
 Lo primero que necesitas para usar el api es saber como autenticarte.
