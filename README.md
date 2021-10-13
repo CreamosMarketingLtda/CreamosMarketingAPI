@@ -228,7 +228,7 @@ Si todo es correcto recibiras una respuesta con estado 201(creado) y un objeto j
 | num_poliza | int | id de la poliza generada por ilio |
 | estado_poliza | int | estado de la solicitud 10: DIGITADA WEB. 33: EN PROCESO DE AUDITORIA. 34: SOLICITUD RECHAZADA. 3: pagado. 104: ERROR DE CREACION ......
 | mensaje | String | descripcion del estado de la poliza |
-| url_poliza | String | Código alfanumerico de identificacion de la poliza. Con este se accede a la vista web en https://stage.creamosmarketing.com/solicitud/{url_poliza} |
+| url_poliza | String | Código numerico de identificacion de la poliza. Con este se accede a la vista web en https:////ilio.creamosmarketing.com:5555/solicitud/{url_poliza} |
 | platform | String | plataforma por donde se tramito el seguro |
 
  
