@@ -122,6 +122,14 @@ Antes de que puedas crear tu primera solicitud y obtener la póliza, debes consu
 
 Este servicio puede ser llamado periodicamente, puede ser diario, semanal, con la frecuencia que prefieras.
 
+``` 
+URL: http://ilio.creamosmarketing.com:5555/v1/api-caribe/colectivo/vigente/
+Method: GET
+Content-Type: application/json
+
+``` 
+
+
 | Parametro | Descripción |
 | -- | -- |
 | moduloId | Aquí iría el id del producto (seguro funerario="10", practiseguro="18", futuro protegido plus="21") |
