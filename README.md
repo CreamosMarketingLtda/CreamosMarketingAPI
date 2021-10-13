@@ -122,6 +122,8 @@ Antes de que puedas crear tu primera solicitud y obtener la póliza, debes consu
 
 Este servicio puede ser llamado periodicamente, puede ser diario, semanal, con la frecuencia que prefieras.
 
+El Endpoint para consultar el servicio de Colectivo Vigente:
+
 ``` 
 URL: http://ilio.creamosmarketing.com:5555/v1/api-caribe/colectivo/vigente/
 Method: GET
@@ -135,6 +137,24 @@ Content-Type: application/json
 | moduloId | Aquí iría el id del producto (seguro funerario="10", practiseguro="18", futuro protegido plus="21") |
 | aseguradoraId | Aquí el id de la aseguradora (Liberty Seguros="7", Seguros Alfa="11")|
 | entiFactId | Aquí entidad de facturación (Gases del Caribe =”9”) |
+
+
+El ejemplo para consumir el endpoint es:
+
+http://ilio.creamosmarketing.com:5555/v1/api-caribe/colectivo/vigente/?colectivo=0000
+
+Solicitas la información con el siguiente objeto:
+
+```
+{
+    "fechaDeVenta":"2021-08-01",
+    "entidadFacturacion": 9,
+    "aseguradora":7,
+    "producto":10
+      
+   }
+
+```
 
 ####   Response
 
@@ -318,7 +338,7 @@ Nota: Código 200 quiere decir que se insertó correctamente de lo contrario mos
 Para obtener los detalles de una solicitud se usa este endpoint:
 
 ``` 
-URL: http://ilio.creamosmarketing.com:5555/secure/polizas/{num_poliza}
+URL: http://ilio.creamosmarketing.com:5555/v1/api-caribe/poliza/contrato/
 Method: GET
 Content-Type: application/json
 ```
@@ -335,7 +355,7 @@ este endpoint devuelve un objeto de json con estos parametros en su body:
 | id_entidad_recaudo | int | entidad recaudadora |
 | numero_contrato | int | numero del contrato valido|
  
- Posibles estados de una polisa
+ Posibles estados de una poliza
 
 El campo state que recibes en este endpoint describe el estado de la poliza, y puede tener los siguientes valores:
 
