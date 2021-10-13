@@ -167,7 +167,7 @@ De lo contrario le mostrara esta información con el respectivo código de error
 El endpoint para crear es:
 
 ``` 
-URL: http://ilio.creamosmarketing.com:5555/secure/polizas/api-caribe/
+URL: http://ilio.creamosmarketing.com:5555/v1/api-caribe/poliza
 Method: POST
 Content-Type: application/json
 ```
@@ -218,7 +218,7 @@ v
    "error":"Internal Server Error",
    "exception":"java.lang.RuntimeException",
    "message":"El contrato (162) ya supero el numero de productos de SEGURO FUNERARIO permitidos a un contrato; \n",
-   "path":"/secure/polizas/"
+   "path":"/v1/api-caribe/polizas/"
    
 ``` 
 
