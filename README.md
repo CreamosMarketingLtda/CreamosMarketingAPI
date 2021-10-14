@@ -134,9 +134,9 @@ Content-Type: application/json
 
 | Parametro | Descripción |
 | -- | -- |
-| moduloId | Aquí iría el id del producto (seguro funerario="10", practiseguro="18", futuro protegido plus="21") |
-| aseguradoraId | Aquí el id de la aseguradora (Liberty Seguros="7", Seguros Alfa="11")|
-| entiFactId | Aquí entidad de facturación (Gases del Caribe =”9”) |
+| moduloId | id del producto (seguro funerario="10", practiseguro="18", futuro protegido plus="21") |
+| aseguradoraId | id de la aseguradora (Liberty Seguros="7", Seguros Alfa="11")|
+| entiFactId | entidad de facturación (Gases del Caribe =”9”) |
 
 
 El ejemplo para consumir el endpoint es:
@@ -342,18 +342,19 @@ URL: http://ilio.creamosmarketing.com:5555/v1/api-caribe/poliza/contrato/
 Method: GET
 Content-Type: application/json
 ```
-
+  
 {num_poliza} es la url alfa númerica que recibes al crear la poliza, solo puedes consultar la poliza que te pertenescan, y tu request debe estar autenticada con el header de Authorization, como se menciona en el Apartado de Autentificación.
 
+ Ejemplo  http: //ilio.creamosmarketing.com:5555/v1/api-caribe/poliza/contrato/?idEntidadFact=9&idAseguradora=7&idModulo=10&numContrato=17129224
 
-este endpoint devuelve un objeto de json con estos parametros en su body:
+
 
 | Parametro | Tipo | Descripción |
 | -- | -- | -- |
-| num_poliza | int | el id del operador comercial dentro de ilio |
-| id_asesor_comercial | int | id del asesor comercial asignado al operador |
-| id_entidad_recaudo | int | entidad recaudadora |
-| numero_contrato | int | numero del contrato valido|
+| producto |Long |  id del producto (seguro funerario="10", practiseguro="18", futuro protegido plus="21") |
+| aseguradora | Long | id de la entidad con la que se toma el seguro ( 7 = Liberty Seguros S.A., 11 = Seguros Alfa S.A. ) |
+| entidadFacturacion  | Long | Valor estatico (Gases del Caribe = "9") |
+| numContrato | Long | numero del contrato valido|
  
  Posibles estados de una poliza
 
@@ -363,409 +364,105 @@ El campo state que recibes en este endpoint describe el estado de la poliza, y p
 | -- | -- | 
 | ERROR DE CREACION | 104 | 
 | CANCELADA | 14 | 
+| DIGITADA WEB | 7 | 
+| AUDITADA WEB | 89 | 
+| ALTA TRANSACCIONAL | 11 |
+| AUDITADA | 10 | 
+| DIGITADA APP | 9 | 
  
+ Ejemplo de request:
+  
+  
+  ``` 
+  {
+    
+    "entidadFacturacion": 9,
+    "aseguradora":7,
+    "producto":10,
+    "numContrato": "420808" 
+   }
+
+  
+  ```
  
- 
- para solicitar los detalles de una solicitud la respuesta:
+ Ejemplo de respuesta:
  
  ``` 
  {
-  "id": 32,
-  "fechaVenta": "11/02/2019",
-  "numPapeleria": "10000032",
-  "observacionAuditoria": null,
-  "numpoliza": null,
-  "fechaTarifa": null,
-  "fechaDigitacion": "11/02/2019 15:15:02",
-  "plan": {
-    "id": 11,
-    "descripcion": "PLAN TRADICIONAL",
-    "topeAsegurados": 2,
-    "topeBeneficiarios": 3,
-    "topeValorAsegurado": "5 SMLV",
-    "codigoInterno": "203",
-    "tmpClientId": 1,
-    "estado": "A",
-    "benefNominados": 0,
-    "asegNominados": 1,
-    "restUbicacion": 1
-  },
-  "convenio": null,
-  "modulo": {
-    "id": 10,
-    "nombre": "SEGURO FUNERARIO",
-    "ultimaActualizacion": 1602707848000,
-    "estado": "A",
-    "reporte": {
-      "id": 2,
-      "nombre": "CertificadoIndividualFunerario",
-      "descripcion": "Seguro Funerario"
-    },
-    "validarFechaNace": 0,
-    "repiteContrato": 0,
-    "validaDocumentoBene": 0,
-    "validaNumCuotas": 0,
-    "validaEstadoCivil": 0
-  },
-  "colectivoVigente": {
-    "id": 83,
-    "codigoInterno": "2502",
-    "descripcion": "Febrero",
-    "estado": 1,
-    "meta": 0
-  },
-  "asegurador": {
-    "id": 7,
-    "nit": {
-      "id": 590,
-      "tipoDoc": "NT",
-      "documento": "860.039.988-0",
-      "nombre1": null,
-      "nombre2": null,
-      "apellido1": null,
-      "apellido2": null,
-      "nombre": "Liberty Seguros S.A.",
-      "telefono": "3559209",
-      "telefono2": null,
-      "telefono3": null,
-      "telefono4": null,
-      "telefono5": null,
-      "telefono6": null,
-      "celular": "3003559209",
-      "email": "gaserasGNO@libertycolombia.com",
-      "sexo": null,
-      "direccion": null,
-      "pais": null,
-      "departamento": null,
-      "municipio": null,
-      "localidad": null,
-      "estado": 1,
-      "fechaNacimiento": null,
-      "fechaExpedicion": null,
-      "usuario": {
-        "id": 81,
-        "nombre": "liberty",
-        "email": "gaserasGNO@libertycolombia.com",
-        "contrasena": "$2a$10$MN62Ie8wmnJXRxwsTIvMC.Bw1eJCpftcxx.B1cTmdIGXyZzFLNHYq",
-        "estado": 1,
-        "ipConexion": null
-      },
-      "verEnPoliza": "N",
-      "estadoCivil": null,
-      "estudio": null,
-      "ocupacion": null,
-      "cantTrabajo": null,
-      "hijos": null,
-      "conviven": null,
-      "paga": null,
-      "trabajan": null,
-      "csmmlv": null,
-      "nomPaga": null,
-      "celpaga": null,
-      "propVivienda": null,
-      "nombreContac": null,
-      "celContact": null
-    },
-    "codAgenciaVenta": "279",
-    "numProductoPorContrato": 2
-  },
-  "entidadFact": {
-    "id": 11,
-    "nit": {
-      "id": 596,
-      "tipoDoc": "NT",
-      "documento": "8001676435",
-      "nombre1": "MARIA",
-      "nombre2": "TRINIDAD",
-      "apellido1": "OSORIO",
-      "apellido2": null,
-      "nombre": "GASES DE OCCIDENTE",
-      "telefono": "3380523",
-      "telefono2": null,
-      "telefono3": null,
-      "telefono4": null,
-      "telefono5": null,
-      "telefono6": null,
-      "celular": "3178244270",
-      "email": "florg@gdo.com.co",
-      "sexo": "F",
-      "direccion": "CL 51 KR 40B - 15 PISO 01",
-      "pais": null,
-      "departamento": {
-        "id": 58,
-        "nombre": "Valle del Cauca",
-        "dptoDane": "76000",
-        "dptoSmartFlex": "5"
-      },
-      "municipio": {
-        "id": 858,
-        "nombre": "CALI"
-      },
-      "localidad": {
-        "id": 10159,
-        "nombre": "SANTIAGO DE CALI",
-        "homologaciones": null
-      },
-      "estado": 1,
-      "fechaNacimiento": "01/05/1952",
-      "fechaExpedicion": "03/08/1973",
-      "usuario": null,
-      "verEnPoliza": "N",
-      "estadoCivil": null,
-      "estudio": null,
-      "ocupacion": null,
-      "cantTrabajo": null,
-      "hijos": null,
-      "conviven": null,
-      "paga": null,
-      "trabajan": null,
-      "csmmlv": null,
-      "nomPaga": null,
-      "celpaga": null,
-      "propVivienda": null,
-      "nombreContac": null,
-      "celContact": null
-    }
-  },
-  "contrato": {
-    "id": 1827884,
-    "numeroContrato": 1407349,
-    "estrato": "2",
-    "direccion": "CL 57D KR 34E - 49 MZ 10 CASA 10 PISO 01 UNI_RES BOSQUES DEL EDEN",
-    "departamento": {
-      "id": 58,
-      "nombre": "Valle del Cauca",
-      "dptoDane": "76000",
-      "dptoSmartFlex": "5"
-    },
-    "municipio": {
-      "id": 884,
-      "nombre": "PALMIRA"
-    },
-    "localidad": {
-      "id": 10347,
-      "nombre": "PALMIRA",
-      "homologaciones": null
-    },
-    "titular": "ROQUELIA OREJUELA TEJADA",
-    "titularNit": null,
-    "infoVentaExterna": null
-  },
-  "asesor": {
-    "id": 9,
-    "nit": {
-      "id": 617,
-      "tipoDoc": "CC",
-      "documento": "1067933118",
-      "nombre1": "JESUS",
-      "nombre2": "DANIEL",
-      "apellido1": "DUQUE",
-      "apellido2": "BARRERA",
-      "nombre": "JESUS DANIEL DUQUE BARRERA",
-      "telefono": "(319) 324-6949",
-      "telefono2": null,
-      "telefono3": null,
-      "telefono4": null,
-      "telefono5": null,
-      "telefono6": null,
-      "celular": "3193246949",
-      "email": "",
-      "sexo": "M",
-      "direccion": "KR 91 CL 28 - 70",
-      "pais": null,
-      "departamento": {
-        "id": 58,
-        "nombre": "Valle del Cauca",
-        "dptoDane": "76000",
-        "dptoSmartFlex": "5"
-      },
-      "municipio": {
-        "id": 858,
-        "nombre": "CALI"
-      },
-      "localidad": {
-        "id": 10159,
-        "nombre": "SANTIAGO DE CALI",
-        "homologaciones": null
-      },
-      "estado": 1,
-      "fechaNacimiento": "12/09/1995",
-      "fechaExpedicion": "13/08/1995",
-      "usuario": {
-        "id": 112,
-        "nombre": "JESUS DUQUE",
-        "email": "asesor2@creamosmarketing.com",
-        "contrasena": "$2a$10$cnVzkxT0CObG4MdUc.fBXOazIDhDVuYA9W13wKEIFVnf4kHDVaB9m",
-        "estado": 1,
-        "ipConexion": null
-      },
-      "verEnPoliza": "S",
-      "estadoCivil": null,
-      "estudio": null,
-      "ocupacion": null,
-      "cantTrabajo": null,
-      "hijos": null,
-      "conviven": null,
-      "paga": null,
-      "trabajan": null,
-      "csmmlv": null,
-      "nomPaga": null,
-      "celpaga": null,
-      "propVivienda": null,
-      "nombreContac": null,
-      "celContact": null
-    }
-  },
-  "operCom": {
-    "id": 48,
-    "nit": {
-      "id": 602,
-      "tipoDoc": "NT",
-      "documento": "9003722931",
-      "nombre1": null,
-      "nombre2": null,
-      "apellido1": null,
-      "apellido2": null,
-      "nombre": "CREAMOS MARKETING",
-      "telefono": "3851891",
-      "telefono2": null,
-      "telefono3": null,
-      "telefono4": null,
-      "telefono5": null,
-      "telefono6": null,
-      "celular": "3176654031",
-      "email": "info@creamosmarketing.com",
-      "sexo": null,
-      "direccion": null,
-      "pais": {
-        "id": 1,
-        "nombre": "COLOMBIA"
-      },
-      "departamento": null,
-      "municipio": null,
-      "localidad": null,
-      "estado": 1,
-      "fechaNacimiento": null,
-      "fechaExpedicion": null,
-      "usuario": {
-        "id": 92,
-        "nombre": "cmk",
-        "email": "info@creamosmarketing.com",
-        "contrasena": "$2a$10$i.0Q2AtNuGxgtwpMHW1USeHWKuAxf5Xr5.AF4s0iekxSwxa9lnQM2",
-        "estado": 1,
-        "ipConexion": null
-      },
-      "verEnPoliza": "N",
-      "estadoCivil": null,
-      "estudio": null,
-      "ocupacion": null,
-      "cantTrabajo": null,
-      "hijos": null,
-      "conviven": null,
-      "paga": null,
-      "trabajan": null,
-      "csmmlv": null,
-      "nomPaga": null,
-      "celpaga": null,
-      "propVivienda": null,
-      "nombreContac": null,
-      "celContact": null
-    }
-  },
-  "tmpClientId": null,
-  "ultimaActualizacion": 1550527733000,
-  "asegurados": [
-    {
-      "id": 33,
-      "condiciones": null,
-      "principal": null,
-      "asegurado": {
-        "id": 7511,
-        "tipoDoc": "CC",
-        "documento": "29664440",
-        "nombre1": "ROQUELIA",
-        "nombre2": "",
-        "apellido1": "OREJUELA",
-        "apellido2": "TEJADA",
-        "nombre": "ROQUELIA  OREJUELA TEJADA",
-        "telefono": "3152404683",
-        "telefono2": null,
-        "telefono3": null,
-        "telefono4": null,
-        "telefono5": null,
-        "telefono6": null,
-        "celular": "3152404683",
-        "email": null,
-        "sexo": "F",
-        "direccion": "CL 57D KR 34E - 49 MZ 10 CASA 10 PISO 01 UNI_RES BOSQUES DEL EDEN",
-        "pais": null,
-        "departamento": {
-          "id": 58,
-          "nombre": "Valle del Cauca",
-          "dptoDane": "76000",
-          "dptoSmartFlex": "5"
-        },
-        "municipio": {
-          "id": 884,
-          "nombre": "PALMIRA"
-        },
-        "localidad": {
-          "id": 10347,
-          "nombre": "PALMIRA",
-          "homologaciones": null
-        },
-        "estado": null,
-        "fechaNacimiento": "04/05/1989",
-        "fechaExpedicion": "29/04/1969",
-        "usuario": null,
-        "verEnPoliza": "S",
-        "estadoCivil": null,
-        "estudio": null,
-        "ocupacion": null,
-        "cantTrabajo": null,
-        "hijos": null,
-        "conviven": null,
-        "paga": null,
-        "trabajan": null,
-        "csmmlv": null,
-        "nomPaga": null,
-        "celpaga": null,
-        "propVivienda": null,
-        "nombreContac": null,
-        "celContact": null
-      },
-      "beneficiarios": []
-    }
-  ],
-  "tarifa": 18810,
-  "estado": {
-    "id": 11,
-    "codigo": "13",
-    "descripcion": "ALTA TRANSACCIONAL",
-    "nombre": "ALTA TRANSACCIONAL",
-    "indiceIconoApk": 3
-  },
-  "urlImgPoliza": null,
-  "planAnterior": null,
-  "fotosPoliza": [
-    {
+    "load": [
+        {
+            "id": "d390cc17-2cf8-11ec-a21f-3cecef70ab64",
+            "poliza": 1518,
+            "numPoliza": null,
+            "papeleria": "10001518",
+            "fechaVenta": "19/02/2019 00:00",
+            "fechaDigitacion": null,
+            "fechaPrimeraAuditoria": null,
+            "motivoPrimeraAuditoria": null,
+            "fechaUltimaAuditoria": null,
+            "motivoUltimaAuditoria": null,
+            "codigoAseguradora": "7",
+            "nombreAseguradora": "Liberty Seguros S.A.",
+            "codigoOperadorCom": "58",
+            "operadorComercial": "COS TELEVENTA",
+            "codigoEntFact": "9",
+            "entidadFacturacion": "GASES DEL CARIBE",
+            "codigoSupervisor": "9",
+            "documentoSupervisor": "80142022",
+            "supervisor": "HERNAN  ROJAS PACHON",
+            "codigoAsesor": "28",
+            "documentoAsesor": "1022373495",
+            "asesor": "DIANA ROCIO ROBAYO GARZON",
+            "estrategia": "Televentas",
+            "codigoProducto": "10",
+            "producto": "SEGURO FUNERARIO",
+            "codigoPlan": "11",
+            "plan": "PLAN TRADICIONAL",
+            "colectivo": "Febrero",
+            "documentoAsegurado": "1100332016",
+            "nombreAsegurado": "ZOBEIDA ESTHER MONTES BALETA",
+            "telefonoAsegurado": "3135886515",
+            "emailAsegurado": null,
+            "contrato": "420808",
+            "numeroContrato": "17129224",
+            "estrato": "1",
+            "titular": "ELIZABETH MORA",
+            "municipioContrato": "SANTA MARTA",
+            "tarifa": 16950.0,
+            "puntos": 35,
+            "estado": "7",
+            "nombreEstado": "DIGITADA WEB",
+            "observacionAuditoria": null,
+            "resultadoCalidad": null,
+            "calificac": null,
+            "observacionCalidad": null,
+            "sexoAsegurado": "F",
+            "fechaNacimientoAsegurado": "1951-08-21",
+            "estadoCivilAsegurado": null,
+            "productoExterno": null,
+            "aliadoComercial": null,
+            "numSolicitudExterna": null,
+            "referenciaFactura": null,
+            "numCuotas": "12",
+            "idConvenio": null,
+            "direccionContrato": "KR 5 CL 1A - 7",
+            "auditor": null,
+            "motivoCancelacion": null
+        }
+    ],
+{
       "id": 36,
       "url": "/home/admincmk/archivos/polizas/32_2502.png",
       "idImagenSubida": null
     }
-  ],
-  "desdeBase": null,
-  "campaniaDetalleId": null,
-  "solicitudPolizaId": null,
-  "motivoAuditoria": null,
-  "emailEnviado": null,
-  "puntos": 51,
-  "auditor": null,
-  "infoVentaExterna": null,
-  "digitador": null,
-  "usuarioVendedorCalle": null,
-  "razon": null,
-  "index": 0
+
+    "responseCode": 200,
+    "message": "Solicitud procesada con ï¿½xito",
+    "page": null,
+    "pageSize": null,
+    "totalRecords": null
+    
 }
+
  
 ```
