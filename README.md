@@ -385,7 +385,7 @@ El campo state que recibes en este endpoint describe el estado de la poliza, y p
   
   ```
  
- Ejemplo de respuesta:
+ Ejemplo de response:
  
  ``` 
  {
