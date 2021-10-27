@@ -321,11 +321,11 @@ let  Response =[{
 
     //el output de la consola seria:
     {
-        num_poliza : 2272889,
-        estado_poliza: 10, // estado interno deacuerdo al modelo de negocio
-        mensaje: "DIGITADA WEB", 
-        url_poliza: "ct9yd3g3",
-        platform: "ASESOR DIGITAL GASES DEL CARIBE "
+        "numPoliza" : 2272889,
+        "estadoPoliza": 10, // estado interno deacuerdo al modelo de negocio
+        "mensaje": "DIGITADA WEB", 
+        "url_poliza": "ct9yd3g3",
+        "asesor": "ASESOR DIGITAL GASES DEL CARIBE "
     }
         
 ```
