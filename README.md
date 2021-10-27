@@ -333,7 +333,7 @@ Nota: Código 200 quiere decir que se insertó correctamente de lo contrario mos
 
 
 
-### Consultar poliza
+### Consultar poliza por contrato
 
 Para obtener los detalles de una solicitud se usa este endpoint:
 
@@ -466,3 +466,53 @@ El campo state que recibes en este endpoint describe el estado de la poliza, y p
 
  
 ```
+
+  
+  ### Consultar poliza por Id
+
+  Para obtener los detalles de una solicitud se usa este endpoint:
+
+``` 
+URL: http://ilio.creamosmarketing.com:5555/v1/api-caribe/poliza/consultaById
+Method: GET
+Content-Type: application/json
+```
+ 
+ Ejemplo  http: //ilio.creamosmarketing.com:5555/v1/api-caribe//poliza/consultaById/?idPoliza=2
+
+  
+  Ejemplo de request:
+  
+  ```
+  {
+    
+    "entidadFacturacion": 9,
+    "idPoliza": 2
+   
+   }
+
+  
+  
+  ```
+  
+  
+ Ejemplo de response:
+ 
+```
+    { 
+  
+    "load": { 
+        "idEstado": 15, 
+        "urlPoliza": "/home/admincmk/archivos/polizas/2_2402.png", 
+        "idPoliza": 2, 
+        "descripcionEstado": "CARGUE VEEX" }, 
+        "responseCode": 200,
+        "message": "Solicitud procesada con ï¿½xito", 
+        "page": null, 
+        "pageSize": null, 
+        "totalRecords": null
+  }
+  
+```
+  
+  
