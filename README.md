@@ -470,7 +470,7 @@ El campo state que recibes en este endpoint describe el estado de la poliza, y p
   
   ### Consultar poliza por Id
 
-  Para obtener los detalles de una solicitud se usa este endpoint:
+  Se puede consultar pólizas solo usando el id de correspondiente.  Para obtener los detalles de una solicitud se usa este endpoint:
 
 ``` 
 URL: http://ilio.creamosmarketing.com:5555/v1/api-caribe/poliza/consultaById
