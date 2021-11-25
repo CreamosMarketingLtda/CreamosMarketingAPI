@@ -366,6 +366,7 @@ Content-Type: application/json
 | entidadFacturacion  | Long | Valor estatico (Gases del Caribe = "9") |
 | numContrato | Long | numero del contrato valido|
 | docAsegurado | Long | numero de identificación del asegurado|
+
  
 Posibles estados de una poliza
 
@@ -469,5 +470,77 @@ Content-Type: application/json
   }
   
 ```
+  ### Agendamiento
+
+Para obtener los detalles de una solicitud se usa este endpoint:
+
+``` 
+URL: http://ilio.creamosmarketing.com:5555/v1/api-caribe/agendamiento/
+Method: SET
+Content-Type: application/json
+```
+  
+Se recibe la información de contacto del usuario, para ser almacenada en Ilio y proceder con el agedamiento de llamada por parte de un asesor comercial
+  
+
+
+| Parametro | Tipo | Descripción |
+| -- | -- | -- |
+| producto |Long |  id del producto (seguro funerario="10", practiseguro="18", futuro protegido plus="21") |
+| aseguradora | Long | id de la entidad con la que se toma el seguro ( 7 = Liberty Seguros S.A., 11 = Seguros Alfa S.A. ) |
+| entidadFacturacion  | Long | Valor estatico (Gases del Caribe = "9") |
+| numContrato | Long | numero del contrato valido|
+| docAsegurado | Long | numero de identificación del asegurado|
+| tipoDoc | String | tipo documento asegurado |
+| nombre1 | String | primer nombre del asegurado |
+| nombre2 | String | segundo  nombre del asegurado |
+| apellido1 | String | primer apellido del asegurado |
+| apellido2 | String | segundo apellido del asegurado |
+| celular | String | celular del asegurado |
+| fechaDeVenta | String | formato yyyyy-mm-dd |
+  
+  
+  Ejemplo de request:
+  
+  ```
+  
+  {
+    "load": {
+        "fechaventa": "15-2-2019",
+        "entidadFacturacion":9,
+        "aseguradora":7,
+        "producto":10,
+        "tipoDoc":"CC",
+        "docAsegurado":1080024550,
+        "nombre1":"Ejemplo Inserta",
+        "nombre2":"Ejemplo Inserta",
+        "apellido1":"Ejemplo Inserta",
+        "apellido2":"Ejemplo Inserta",
+        "celular":"3126378524",
+  
+  }
+
+  }
+  
+  
+  ```
+  
+  Ejemplo de Response:
+  
+  ```
+  
+  let  Response =[{
+ {
+    "load": "Ok",
+    "responseCode": 200,
+    "message": "Solicitud procesada con ï¿½xito",
+    "page": null,
+    "pageSize": null,
+    "totalRecords": null
+}
+  
+  
+  
+  
   
   
