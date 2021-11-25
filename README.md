@@ -333,7 +333,7 @@ Nota: Código 200 quiere decir que se insertó correctamente de lo contrario mos
 
 
 
-### Consultar poliza por contrato
+### Consultar poliza por contrato y cedula de asegurado
 
 Para obtener los detalles de una solicitud se usa este endpoint:
 
@@ -345,7 +345,7 @@ Content-Type: application/json
   
 {num_poliza} es la url alfa númerica que recibes al crear la poliza, solo puedes consultar la poliza que te pertenescan, y tu request debe estar autenticada con el header de Authorization, como se menciona en el Apartado de Autentificación.
 
- Ejemplo  http: //ilio.creamosmarketing.com:5555/v1/api-caribe/poliza/contrato/?idEntidadFact=9&idAseguradora=7&idModulo=10&numContrato=17129224
+ Ejemplo  http:// ilio.creamosmarketing.com:5555/v1/api-caribe/poliza/contrato/idEntidadFact=9&idAseguradora=7&idModulo=10&numContrato=17129224&docAsegurado=1100332016
 
 
 
@@ -355,8 +355,9 @@ Content-Type: application/json
 | aseguradora | Long | id de la entidad con la que se toma el seguro ( 7 = Liberty Seguros S.A., 11 = Seguros Alfa S.A. ) |
 | entidadFacturacion  | Long | Valor estatico (Gases del Caribe = "9") |
 | numContrato | Long | numero del contrato valido|
+| docAsegurado | Long | numero de identificación del asegurado|
  
- Posibles estados de una poliza
+Posibles estados de una poliza
 
 El campo state que recibes en este endpoint describe el estado de la poliza, y puede tener los siguientes valores:
 
@@ -380,6 +381,9 @@ El campo state que recibes en este endpoint describe el estado de la poliza, y p
     "aseguradora":7,
     "producto":10,
     "numContrato": "420808" 
+    "docAsegurado": "1100332016"
+    
+    
    }
 
   
@@ -387,81 +391,17 @@ El campo state que recibes en este endpoint describe el estado de la poliza, y p
  
  Ejemplo de response:
  
- ``` 
- {
+ ```
+  
+  {
     "load": [
-        {
-            "id": "d390cc17-2cf8-11ec-a21f-3cecef70ab64",
-            "poliza": 1518,
-            "numPoliza": null,
-            "papeleria": "10001518",
-            "fechaVenta": "19/02/2019 00:00",
-            "fechaDigitacion": null,
-            "fechaPrimeraAuditoria": null,
-            "motivoPrimeraAuditoria": null,
-            "fechaUltimaAuditoria": null,
-            "motivoUltimaAuditoria": null,
-            "codigoAseguradora": "7",
-            "nombreAseguradora": "Liberty Seguros S.A.",
-            "codigoOperadorCom": "58",
-            "operadorComercial": "COS TELEVENTA",
-            "codigoEntFact": "9",
-            "entidadFacturacion": "GASES DEL CARIBE",
-            "codigoSupervisor": "9",
-            "documentoSupervisor": "80142022",
-            "supervisor": "HERNAN  ROJAS PACHON",
-            "codigoAsesor": "28",
-            "documentoAsesor": "1022373495",
-            "asesor": "DIANA ROCIO ROBAYO GARZON",
-            "estrategia": "Televentas",
-            "codigoProducto": "10",
-            "producto": "SEGURO FUNERARIO",
-            "codigoPlan": "11",
-            "plan": "PLAN TRADICIONAL",
-            "colectivo": "Febrero",
-            "documentoAsegurado": "1100332016",
-            "nombreAsegurado": "ZOBEIDA ESTHER MONTES BALETA",
-            "telefonoAsegurado": "3135886515",
-            "emailAsegurado": null,
-            "contrato": "420808",
-            "numeroContrato": "17129224",
-            "estrato": "1",
-            "titular": "ELIZABETH MORA",
-            "municipioContrato": "SANTA MARTA",
-            "tarifa": 16950.0,
-            "puntos": 35,
-            "estado": "7",
-            "nombreEstado": "DIGITADA WEB",
-            "observacionAuditoria": null,
-            "resultadoCalidad": null,
-            "calificac": null,
-            "observacionCalidad": null,
-            "sexoAsegurado": "F",
-            "fechaNacimientoAsegurado": "1951-08-21",
-            "estadoCivilAsegurado": null,
-            "productoExterno": null,
-            "aliadoComercial": null,
-            "numSolicitudExterna": null,
-            "referenciaFactura": null,
-            "numCuotas": "12",
-            "idConvenio": null,
-            "direccionContrato": "KR 5 CL 1A - 7",
-            "auditor": null,
-            "motivoCancelacion": null
-        }
+        "poliza": 1518,
     ],
-{
-      "id": 36,
-      "url": "/home/admincmk/archivos/polizas/32_2502.png",
-      "idImagenSubida": null
-    }
-
     "responseCode": 200,
     "message": "Solicitud procesada con ï¿½xito",
     "page": null,
     "pageSize": null,
     "totalRecords": null
-    
 }
 
  
@@ -499,18 +439,23 @@ Content-Type: application/json
  Ejemplo de response:
  
 ```
-    { 
-  
-    "load": { 
-        "idEstado": 15, 
-        "urlPoliza": "/home/admincmk/archivos/polizas/2_2402.png", 
-        "idPoliza": 2, 
-        "descripcionEstado": "CARGUE VEEX" }, 
-        "responseCode": 200,
-        "message": "Solicitud procesada con ï¿½xito", 
-        "page": null, 
-        "pageSize": null, 
-        "totalRecords": null
+    {{
+    "load": {
+        "fechaventa": "15-2-2019",
+        "producto": "SEGURO PAZ Y SALVO",
+        "aseguradora": "Liberty Seguros S.A.",
+        "idPoliza": 745,
+        "urlPoliza": "http://ilio.creamosmarketing.com/files/download/?path=/home/admincmk/archivos/polizas/745_1102.png",
+        "idEstado": 11,
+        "descripcionEstado": "ALTA TRANSACCIONAL"
+    },
+    "responseCode": 200,
+    "message": "Solicitud procesada con ï¿½xito",
+    "page": null,
+    "pageSize": null,
+    "totalRecords": null
+}
+
   }
   
 ```
