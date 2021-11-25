@@ -330,6 +330,16 @@ let  Response =[{
         
 ```
 Nota: Código 200 quiere decir que se insertó correctamente de lo contrario mostrará 4000, quiere decir que ocurrió algún problema y no se logró el cargue de la póliza.
+  
+ Algunos otros errores son:
+  
+Error 4005 = La poliza a insertar cuenta con un numero de papeleria que ya se encuentra registrada en otra poliza actualmente.
+
+Error 4006 = La poliza a insertar excede el numero de Modulos/Productos permitidos en un contrato especifico
+
+Error 4007 = La poliza a insertar excede el numero de Modulos/productos totales permitidos en un contrato
+
+
 
 
 
