@@ -476,7 +476,7 @@ Para obtener los detalles de una solicitud se usa este endpoint:
 
 ``` 
 URL: http://ilio.creamosmarketing.com:5555/v1/api-caribe/agendamiento/
-Method: SET
+Method: GET
 Content-Type: application/json
 ```
   
