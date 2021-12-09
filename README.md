@@ -486,18 +486,19 @@ Se recibe la información de contacto del usuario, para ser almacenada en Ilio y
 
 | Parametro | Tipo | Descripción |
 | -- | -- | -- |
+| id | Long | id del servicio de agendamiento, debe ser 1 el valor |
 | producto |Long |  id del producto (seguro funerario="10", practiseguro="18", futuro protegido plus="21") |
 | aseguradora | Long | id de la entidad con la que se toma el seguro ( 7 = Liberty Seguros S.A., 11 = Seguros Alfa S.A. ) |
 | entidadFacturacion  | Long | Valor estatico (Gases del Caribe = "9") |
 | numContrato | Long | numero del contrato valido|
-| docAsegurado | Long | numero de identificación del asegurado|
+| documento | Long | numero de identificación del asegurado|
 | tipoDoc | String | tipo documento asegurado |
 | nombre1 | String | primer nombre del asegurado |
 | nombre2 | String | segundo  nombre del asegurado |
 | apellido1 | String | primer apellido del asegurado |
 | apellido2 | String | segundo apellido del asegurado |
 | celular | String | celular del asegurado |
-| fechaDeVenta | String | formato yyyyy-mm-dd |
+| fechaDeVenta | String | formato yyyy-mm-dd |
   
   
   Ejemplo de request:
@@ -506,17 +507,19 @@ Se recibe la información de contacto del usuario, para ser almacenada en Ilio y
   
   {
     "load": {
-        "fechaventa": "15-2-2019",
-        "entidadFacturacion":9,
-        "aseguradora":7,
-        "producto":10,
+        
+        "id":1,
+        "producto":111,
+        "aseguradora":777,
+        "entidadFacturacion":"999",
+        "documento":1080024550,
         "tipoDoc":"CC",
-        "docAsegurado":1080024550,
-        "nombre1":"Ejemplo Inserta",
-        "nombre2":"Ejemplo Inserta",
-        "apellido1":"Ejemplo Inserta",
-        "apellido2":"Ejemplo Inserta",
+        "nombre1":"Ejemplo Inserta111111",
+        "nombre2":"Ejemplo Inserta222222",
+        "apellido1":"Ejemplo Inserta3333333",
+        "apellido2":"Ejemplo Inserta444444",
         "celular":"3126378524",
+        "fechaDeVenta": "2021-10-23",
   
   }
 
