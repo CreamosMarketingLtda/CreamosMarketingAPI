@@ -541,8 +541,12 @@ Se recibe la información de contacto del usuario, para ser almacenada en Ilio y
     "pageSize": null,
     "totalRecords": null
 }
+  ```
+  Mapeo de Errores 
   
-  Mapeo de Errores {
+  ```
+  
+  {
   
   Error 4010 = No existe o no se encontro ningun body o parametros enviados al end point
 
