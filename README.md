@@ -542,7 +542,40 @@ Se recibe la información de contacto del usuario, para ser almacenada en Ilio y
     "totalRecords": null
 }
   
+  Mapeo de Errores {
   
+  Error 4010 = No existe o no se encontro ningun body o parametros enviados al end point
+
+Error 4011 = el campo 'nombre1' es obligatorio y se encuentra vacío o nulo
+
+Error 4012 = el campo 'nombre1' debe tener solo caracteres y una longitud de minimo 4 caracteres
+
+Error 4013 = el campo 'apellido1' es obligatorio y se encuentra vacio o nulo
+
+Error 4014 =  el campo 'apellido1' debe tener solo caracteres y una longitud de minimo 4 caracteres
+
+Error 4015 = el campo 'documento' es obligatorio y se encuentra vacío o nulo
+
+Error 4016 = el campo 'documento' debe tener solo caracteres numéricos y una longitud de mínimo 8 caracteres
+
+Error 4017 = el campo 'celular' es obligatorio y se encuentra vacío o nulo
+
+Error 4018 = el campo 'celular' debe tener solo caracteres numéricos y una longitud de mínimo 7 caracteres
+
+Error 4019 = los campos 'producto' , 'aseguradora' , 'entidadFacturacion' y 'contrato' no pueden ser nulos o vacios
+
+Error 4020 =  los campos 'producto' , 'aseguradora' , 'entidadFacturacion' y 'contrato' deben tener solo caracteres numéricos y una longitud de minimo 1
+
+
+
+
+
+
+
+
+
+  
+  }
   
   
   
