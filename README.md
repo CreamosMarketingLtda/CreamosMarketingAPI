@@ -195,7 +195,7 @@ De lo contrario le mostrara esta información con el respectivo código de error
 El endpoint para crear es:
 
 ``` 
-URL: http://ilio.creamosmarketing.com:5555/v1/api-caribe/poliza
+URL: http://ilio.creamosmarketing.com:5555/v1/api-caribe/polizas/insertar/
 Method: POST
 Content-Type: application/json
 ```
