@@ -424,12 +424,12 @@ El campo state que recibes en este endpoint describe el estado de la poliza, y p
   Se puede consultar pólizas solo usando el id correspondiente.  Para obtener los detalles de una solicitud se usa este endpoint:
 
 ``` 
-URL: http://ilio.creamosmarketing.com:5555/v1/api-caribe/poliza/consultaById
+URL: http://ilio.creamosmarketing.com:5555/v1/api-caribe/poliza/consultaById/
 Method: GET
 Content-Type: application/json
 ```
  
- Ejemplo  http: //ilio.creamosmarketing.com:5555/v1/api-caribe//poliza/consultaById/?idPoliza=2
+ Ejemplo  http: //ilio.creamosmarketing.com:5555/v1/api-caribe/poliza/consultaById/?idPoliza=2
 
   
   Ejemplo de request:
